@@ -1,0 +1,753 @@
+{
+  "version": 1,
+  "serial": 13,
+  "modules": [
+    {
+      "path": [
+        "root"
+      ],
+      "outputs": {
+      },
+      "resources": {
+        "aws_instance.Instance1": {
+          "type": "aws_instance",
+          "primary": {
+            "id": "i-0303e009ce4b1a32a",
+            "attributes": {
+              "ami": "ami-02354e95b39ca8dec",
+              "associate_public_ip_address": "true",
+              "availability_zone": "us-east-1a",
+              "ebs_block_device.#": "0",
+              "ebs_optimized": "false",
+              "ephemeral_block_device.#": "0",
+              "id": "i-0303e009ce4b1a32a",
+              "instance_type": "t2.micro",
+              "monitoring": "false",
+              "private_dns": "ip-172-31-12-95.ec2.internal",
+              "private_ip": "172.31.12.95",
+              "public_dns": "ec2-75-101-197-52.compute-1.amazonaws.com",
+              "public_ip": "75.101.197.52",
+              "root_block_device.#": "1",
+              "security_groups.#": "0",
+              "source_dest_check": "true",
+              "tenancy": "default",
+              "vpc_security_group_ids.#": "1",
+              "subnet_id": "subnet-06d1f0485318c7520"
+            },
+            "meta": {
+              "schema_version": "1"
+            }
+          }
+        },
+        "aws_iam_instance_profile.EC2": {
+          "type": "aws_iam_instance_profile",
+          "primary": {
+            "id": "EC2",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:instance-profile/EC2",
+              "id": "EC2",
+              "name": "EC2",
+              "path": "/",
+              "role": "EC2",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_instance_profile.rancher": {
+          "type": "aws_iam_instance_profile",
+          "primary": {
+            "id": "rancher",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:instance-profile/rancher",
+              "id": "rancher",
+              "name": "rancher",
+              "path": "/",
+              "role": "rancher",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_instance_profile.TranslateFullAccess": {
+          "type": "aws_iam_instance_profile",
+          "primary": {
+            "id": "TranslateFullAccess",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:instance-profile/TranslateFullAccess",
+              "id": "TranslateFullAccess",
+              "name": "TranslateFullAccess",
+              "path": "/",
+              "role": "TranslateFullAccess",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy.AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc": {
+          "type": "aws_iam_policy",
+          "primary": {
+            "id": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc",
+            "attributes": {
+              "id": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc",
+              "name": "AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc",
+              "path": "/service-role/",
+              "description": null,
+              "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"logs:CreateLogGroup\",\n      \"Resource\": \"arn:aws:logs:us-east-1:005488327456:*\"\n    },\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"logs:CreateLogStream\",\n        \"logs:PutLogEvents\"\n      ],\n      \"Resource\": [\n        \"arn:aws:logs:us-east-1:005488327456:log-group:/aws/lambda/NewLambda:*\"\n      ]\n    }\n  ]\n}\n"
+            }
+          }
+        },
+        "aws_iam_policy.AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5": {
+          "type": "aws_iam_policy",
+          "primary": {
+            "id": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5",
+            "attributes": {
+              "id": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5",
+              "name": "AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5",
+              "path": "/service-role/",
+              "description": null,
+              "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"logs:CreateLogGroup\",\n      \"Resource\": \"arn:aws:logs:us-east-1:005488327456:*\"\n    },\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"logs:CreateLogStream\",\n        \"logs:PutLogEvents\"\n      ],\n      \"Resource\": [\n        \"arn:aws:logs:us-east-1:005488327456:log-group:/aws/lambda/HelloWorld:*\"\n      ]\n    }\n  ]\n}\n"
+            }
+          }
+        },
+        "aws_iam_policy.AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf": {
+          "type": "aws_iam_policy",
+          "primary": {
+            "id": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf",
+            "attributes": {
+              "id": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf",
+              "name": "AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf",
+              "path": "/service-role/",
+              "description": null,
+              "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"logs:CreateLogGroup\",\n      \"Resource\": \"arn:aws:logs:us-east-1:005488327456:*\"\n    },\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"logs:CreateLogStream\",\n        \"logs:PutLogEvents\"\n      ],\n      \"Resource\": [\n        \"arn:aws:logs:us-east-1:005488327456:log-group:/aws/lambda/kinesis-firehose-syslog:*\"\n      ]\n    }\n  ]\n}\n"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5-policy-attachment",
+            "attributes": {
+              "id": "AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5-policy-attachment",
+              "name": "AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5-policy-attachment",
+              "policy_arn": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-0d150846-0255-46bb-b71a-a4e76f8c10c5",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc-policy-attachment",
+            "attributes": {
+              "id": "AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc-policy-attachment",
+              "name": "AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc-policy-attachment",
+              "policy_arn": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-38982fc0-7584-4644-a088-06174d2a58fc",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf-policy-attachment",
+            "attributes": {
+              "id": "AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf-policy-attachment",
+              "name": "AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf-policy-attachment",
+              "policy_arn": "arn:aws:iam::005488327456:policy/service-role/AWSLambdaBasicExecutionRole-6c69d505-a2ed-4fed-8431-8c44696989bf",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AmazonEC2FullAccess-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AmazonEC2FullAccess-policy-attachment",
+            "attributes": {
+              "id": "AmazonEC2FullAccess-policy-attachment",
+              "name": "AmazonEC2FullAccess-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.TranslateFullAccess-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "TranslateFullAccess-policy-attachment",
+            "attributes": {
+              "id": "TranslateFullAccess-policy-attachment",
+              "name": "TranslateFullAccess-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/TranslateFullAccess",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AutoScalingServiceRolePolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AutoScalingServiceRolePolicy-policy-attachment",
+            "attributes": {
+              "id": "AutoScalingServiceRolePolicy-policy-attachment",
+              "name": "AutoScalingServiceRolePolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSElasticLoadBalancingServiceRolePolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSElasticLoadBalancingServiceRolePolicy-policy-attachment",
+            "attributes": {
+              "id": "AWSElasticLoadBalancingServiceRolePolicy-policy-attachment",
+              "name": "AWSElasticLoadBalancingServiceRolePolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSEC2SpotServiceRolePolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSEC2SpotServiceRolePolicy-policy-attachment",
+            "attributes": {
+              "id": "AWSEC2SpotServiceRolePolicy-policy-attachment",
+              "name": "AWSEC2SpotServiceRolePolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AWSEC2SpotServiceRolePolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.CloudWatchLogsFullAccess-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "CloudWatchLogsFullAccess-policy-attachment",
+            "attributes": {
+              "id": "CloudWatchLogsFullAccess-policy-attachment",
+              "name": "CloudWatchLogsFullAccess-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/CloudWatchLogsFullAccess",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AmazonEC2SpotFleetTaggingRole-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AmazonEC2SpotFleetTaggingRole-policy-attachment",
+            "attributes": {
+              "id": "AmazonEC2SpotFleetTaggingRole-policy-attachment",
+              "name": "AmazonEC2SpotFleetTaggingRole-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/service-role/AmazonEC2SpotFleetTaggingRole",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSSupportServiceRolePolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSSupportServiceRolePolicy-policy-attachment",
+            "attributes": {
+              "id": "AWSSupportServiceRolePolicy-policy-attachment",
+              "name": "AWSSupportServiceRolePolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSTrustedAdvisorServiceRolePolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSTrustedAdvisorServiceRolePolicy-policy-attachment",
+            "attributes": {
+              "id": "AWSTrustedAdvisorServiceRolePolicy-policy-attachment",
+              "name": "AWSTrustedAdvisorServiceRolePolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.CloudWatchEventsServiceRolePolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "CloudWatchEventsServiceRolePolicy-policy-attachment",
+            "attributes": {
+              "id": "CloudWatchEventsServiceRolePolicy-policy-attachment",
+              "name": "CloudWatchEventsServiceRolePolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/CloudWatchEventsServiceRolePolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSGlobalAcceleratorSLRPolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSGlobalAcceleratorSLRPolicy-policy-attachment",
+            "attributes": {
+              "id": "AWSGlobalAcceleratorSLRPolicy-policy-attachment",
+              "name": "AWSGlobalAcceleratorSLRPolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AWSGlobalAcceleratorSLRPolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AWSServiceRoleForAmazonEKSNodegroup-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AWSServiceRoleForAmazonEKSNodegroup-policy-attachment",
+            "attributes": {
+              "id": "AWSServiceRoleForAmazonEKSNodegroup-policy-attachment",
+              "name": "AWSServiceRoleForAmazonEKSNodegroup-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_policy_attachment.AmazonEKSServiceRolePolicy-policy-attachment": {
+          "type": "aws_iam_policy_attachment",
+          "primary": {
+            "id": "AmazonEKSServiceRolePolicy-policy-attachment",
+            "attributes": {
+              "id": "AmazonEKSServiceRolePolicy-policy-attachment",
+              "name": "AmazonEKSServiceRolePolicy-policy-attachment",
+              "policy_arn": "arn:aws:iam::aws:policy/aws-service-role/AmazonEKSServiceRolePolicy",
+              "groups.#": "0",
+              "users.#": "0",
+              "roles.#": "1"
+            }
+          }
+        },
+        "aws_iam_role.aws-ec2-spot-fleet-tagging-role": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "aws-ec2-spot-fleet-tagging-role",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-ec2-spot-fleet-tagging-role",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"\",\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"spotfleet.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "aws-ec2-spot-fleet-tagging-role",
+              "name": "aws-ec2-spot-fleet-tagging-role",
+              "path": "/",
+              "unique_id": "AROAQCRZBHMQEUWRJM3AS"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForAmazonEKS": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForAmazonEKS",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"eks.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForAmazonEKS",
+              "name": "AWSServiceRoleForAmazonEKS",
+              "path": "/aws-service-role/eks.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQMDRURZTVD"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForAmazonEKSNodegroup": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForAmazonEKSNodegroup",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"eks-nodegroup.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForAmazonEKSNodegroup",
+              "name": "AWSServiceRoleForAmazonEKSNodegroup",
+              "path": "/aws-service-role/eks-nodegroup.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQHYVOSDEII"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForAutoScaling": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForAutoScaling",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"autoscaling.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForAutoScaling",
+              "name": "AWSServiceRoleForAutoScaling",
+              "path": "/aws-service-role/autoscaling.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQN5NKZRUW4"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForCloudWatchEvents": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForCloudWatchEvents",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"events.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForCloudWatchEvents",
+              "name": "AWSServiceRoleForCloudWatchEvents",
+              "path": "/aws-service-role/events.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQO7AUQIW3H"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForEC2Spot": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForEC2Spot",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/spot.amazonaws.com/AWSServiceRoleForEC2Spot",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"spot.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForEC2Spot",
+              "name": "AWSServiceRoleForEC2Spot",
+              "path": "/aws-service-role/spot.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQAIEDEONN2"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForElasticLoadBalancing": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForElasticLoadBalancing",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"elasticloadbalancing.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForElasticLoadBalancing",
+              "name": "AWSServiceRoleForElasticLoadBalancing",
+              "path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQMD7FUFS52"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForGlobalAccelerator": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForGlobalAccelerator",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/globalaccelerator.amazonaws.com/AWSServiceRoleForGlobalAccelerator",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"globalaccelerator.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForGlobalAccelerator",
+              "name": "AWSServiceRoleForGlobalAccelerator",
+              "path": "/aws-service-role/globalaccelerator.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQBEQ3YT3OH"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForSupport": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForSupport",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"support.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForSupport",
+              "name": "AWSServiceRoleForSupport",
+              "path": "/aws-service-role/support.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQEKFQWDSYQ"
+            }
+          }
+        },
+        "aws_iam_role.AWSServiceRoleForTrustedAdvisor": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "AWSServiceRoleForTrustedAdvisor",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"trustedadvisor.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "AWSServiceRoleForTrustedAdvisor",
+              "name": "AWSServiceRoleForTrustedAdvisor",
+              "path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+              "unique_id": "AROAQCRZBHMQIPZC5KYTH"
+            }
+          }
+        },
+        "aws_iam_role.EC2": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "EC2",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/EC2",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"ec2.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "EC2",
+              "name": "EC2",
+              "path": "/",
+              "unique_id": "AROAQCRZBHMQJVIUGFXI5"
+            }
+          }
+        },
+        "aws_iam_role.HelloWorld-role-sdvkmefa": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "HelloWorld-role-sdvkmefa",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/service-role/HelloWorld-role-sdvkmefa",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"lambda.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "HelloWorld-role-sdvkmefa",
+              "name": "HelloWorld-role-sdvkmefa",
+              "path": "/service-role/",
+              "unique_id": "AROAQCRZBHMQGFOUE2M3L"
+            }
+          }
+        },
+        "aws_iam_role.kinesis-firehose-syslog-role-shm4j5f5": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "kinesis-firehose-syslog-role-shm4j5f5",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/service-role/kinesis-firehose-syslog-role-shm4j5f5",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"lambda.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "kinesis-firehose-syslog-role-shm4j5f5",
+              "name": "kinesis-firehose-syslog-role-shm4j5f5",
+              "path": "/service-role/",
+              "unique_id": "AROAQCRZBHMQC5TJGNLWQ"
+            }
+          }
+        },
+        "aws_iam_role.NewLambda-role-ae8sij7f": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "NewLambda-role-ae8sij7f",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/service-role/NewLambda-role-ae8sij7f",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"lambda.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "NewLambda-role-ae8sij7f",
+              "name": "NewLambda-role-ae8sij7f",
+              "path": "/service-role/",
+              "unique_id": "AROAQCRZBHMQAUIFUZOWL"
+            }
+          }
+        },
+        "aws_iam_role.rancher": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "rancher",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/rancher",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"ec2.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "rancher",
+              "name": "rancher",
+              "path": "/",
+              "unique_id": "AROAQCRZBHMQI4LYJKV6A"
+            }
+          }
+        },
+        "aws_iam_role.TranslateFullAccess": {
+          "type": "aws_iam_role",
+          "primary": {
+            "id": "TranslateFullAccess",
+            "attributes": {
+              "arn": "arn:aws:iam::005488327456:role/TranslateFullAccess",
+              "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"ec2.amazonaws.com\"\n      },\n      \"Action\": \"sts:AssumeRole\"\n    }\n  ]\n}\n",
+              "id": "TranslateFullAccess",
+              "name": "TranslateFullAccess",
+              "path": "/",
+              "unique_id": "AROAQCRZBHMQM3PA6BLIB"
+            }
+          }
+        },
+        "aws_network_acl.acl-01d5c0d481b54c212": {
+          "type": "aws_network_acl",
+          "primary": {
+            "id": "acl-01d5c0d481b54c212",
+            "attributes": {
+              "egress.#": "1",
+              "id": "acl-01d5c0d481b54c212",
+              "ingress.#": "1",
+              "subnet_ids.#": "1",
+              "tags.#": "0",
+              "vpc_id": "vpc-011ff17464149dcd7"
+            }
+          }
+        },
+        "aws_network_interface.eni-0a24070db0dd30610": {
+          "type": "aws_network_interface",
+          "primary": {
+            "id": "eni-0a24070db0dd30610",
+            "attributes": {
+              "attachment.#": "1",
+              "id": "eni-0a24070db0dd30610",
+              "private_ips.#": "1",
+              "security_groups.#": "1",
+              "source_dest_check": "true",
+              "subnet_id": "subnet-06d1f0485318c7520",
+              "tags.#": "0"
+            }
+          }
+        },
+        "aws_route_table.rtb-0afa29b53d4306560": {
+          "type": "aws_route_table",
+          "primary": {
+            "id": "rtb-0afa29b53d4306560",
+            "attributes": {
+              "id": "rtb-0afa29b53d4306560",
+              "vpc_id": "vpc-011ff17464149dcd7",
+              "tags.#": "0",
+              "route.#": "1",
+              "route.3477908381.cidr_block": "0.0.0.0/0",
+              "route.3477908381.gateway_id": "igw-0078499d2b65de33a",
+              "route.3477908381.instance_id": "",
+              "route.3477908381.network_interface_id": "",
+              "route.3477908381.vpc_peering_connection_id": "",
+              "propagating_vgws.#": "0"
+            }
+          }
+        },
+        "aws_route_table_association.rtb-0afa29b53d4306560-rtbassoc-00d6c4f9c4ef4de71": {
+          "type": "aws_route_table_association",
+          "primary": {
+            "id": "rtbassoc-00d6c4f9c4ef4de71",
+            "attributes": {
+              "id": "rtbassoc-00d6c4f9c4ef4de71",
+              "route_table_id": "rtb-0afa29b53d4306560",
+              "subnet_id": "subnet-06d1f0485318c7520"
+            }
+          }
+        },
+        "aws_s3_bucket.2020-terraform-state": {
+          "type": "aws_s3_bucket",
+          "primary": {
+            "id": "2020-terraform-state",
+            "attributes": {
+              "acl": "private",
+              "bucket": "2020-terraform-state",
+              "force_destroy": "false",
+              "id": "2020-terraform-state",
+              "policy": ""
+            }
+          }
+        },
+        "aws_s3_bucket.kubernetess-with-terraform-2020": {
+          "type": "aws_s3_bucket",
+          "primary": {
+            "id": "kubernetess-with-terraform-2020",
+            "attributes": {
+              "acl": "private",
+              "bucket": "kubernetess-with-terraform-2020",
+              "force_destroy": "false",
+              "id": "kubernetess-with-terraform-2020",
+              "policy": ""
+            }
+          }
+        },
+        "aws_security_group.vpc-011ff17464149dcd7-launch-wizard-1": {
+          "type": "aws_security_group",
+          "primary": {
+            "id": "sg-01de67183e2347b18",
+            "attributes": {
+              "description": "launch-wizard-1 created 2020-09-02T14:11:32.064-05:00",
+              "id": "sg-01de67183e2347b18",
+              "name": "launch-wizard-1",
+              "owner_id": "005488327456",
+              "vpc_id": "vpc-011ff17464149dcd7",
+              "tags.#": "0",
+              "egress.#": "1",
+              "egress.482069346.from_port": "0",
+              "egress.482069346.to_port": "0",
+              "egress.482069346.protocol": "-1",
+              "egress.482069346.cidr_blocks.#": "1",
+              "egress.482069346.ipv6_cidr_blocks.#": "0",
+              "egress.482069346.prefix_list_ids.#": "0",
+              "egress.482069346.security_groups.#": "0",
+              "egress.482069346.self": "false",
+              "egress.482069346.cidr_blocks.0": "0.0.0.0/0",
+              "ingress.#": "1",
+              "ingress.2541437006.from_port": "22",
+              "ingress.2541437006.to_port": "22",
+              "ingress.2541437006.protocol": "tcp",
+              "ingress.2541437006.cidr_blocks.#": "1",
+              "ingress.2541437006.ipv6_cidr_blocks.#": "0",
+              "ingress.2541437006.prefix_list_ids.#": "0",
+              "ingress.2541437006.security_groups.#": "0",
+              "ingress.2541437006.self": "false",
+              "ingress.2541437006.cidr_blocks.0": "0.0.0.0/0"
+            }
+          }
+        },
+        "aws_security_group.vpc-011ff17464149dcd7-default": {
+          "type": "aws_security_group",
+          "primary": {
+            "id": "sg-056b60b3bf5d8177f",
+            "attributes": {
+              "description": "default VPC security group",
+              "id": "sg-056b60b3bf5d8177f",
+              "name": "default",
+              "owner_id": "005488327456",
+              "vpc_id": "vpc-011ff17464149dcd7",
+              "tags.#": "0",
+              "egress.#": "1",
+              "egress.482069346.from_port": "0",
+              "egress.482069346.to_port": "0",
+              "egress.482069346.protocol": "-1",
+              "egress.482069346.cidr_blocks.#": "1",
+              "egress.482069346.ipv6_cidr_blocks.#": "0",
+              "egress.482069346.prefix_list_ids.#": "0",
+              "egress.482069346.security_groups.#": "0",
+              "egress.482069346.self": "false",
+              "egress.482069346.cidr_blocks.0": "0.0.0.0/0",
+              "ingress.#": "1",
+              "ingress.2187114496.from_port": "0",
+              "ingress.2187114496.to_port": "0",
+              "ingress.2187114496.protocol": "-1",
+              "ingress.2187114496.cidr_blocks.#": "0",
+              "ingress.2187114496.ipv6_cidr_blocks.#": "0",
+              "ingress.2187114496.prefix_list_ids.#": "0",
+              "ingress.2187114496.security_groups.#": "0",
+              "ingress.2187114496.self": "true"
+            }
+          }
+        },
+        "aws_subnet.subnet-06d1f0485318c7520-subnet-06d1f0485318c7520": {
+          "type": "aws_subnet",
+          "primary": {
+            "id": "subnet-06d1f0485318c7520",
+            "attributes": {
+              "availability_zone": "us-east-1a",
+              "cidr_block": "172.31.0.0/20",
+              "id": "subnet-06d1f0485318c7520",
+              "map_public_ip_on_launch": "true",
+              "tags.#": "0",
+              "vpc_id": "vpc-011ff17464149dcd7"
+            }
+          }
+        },
+        "aws_vpc.vpc-011ff17464149dcd7": {
+          "type": "aws_vpc",
+          "primary": {
+            "id": "vpc-011ff17464149dcd7",
+            "attributes": {
+              "cidr_block": "172.31.0.0/16",
+              "enable_dns_hostnames": "true",
+              "enable_dns_support": "true",
+              "id": "vpc-011ff17464149dcd7",
+              "instance_tenancy": "default",
+              "tags.#": "0"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
